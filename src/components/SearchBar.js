@@ -11,7 +11,7 @@ export default function SearchBar({ term, onTermChange, onTermSubmit }) {
                 style={styles.inputStyle}
                 value={term}
                 onChangeText={onTermChange}
-                onEndEditing={onTermSubmit}
+                onEndEditing={(event) => onTermSubmit(event)}
                 autoCapitalize="none"
                 autoCorrect={false}
             />
