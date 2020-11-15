@@ -5,6 +5,11 @@ import { useNavigation } from '@react-navigation/native'
 
 
 export default function ResultsList({ title, results }) {
+
+    if (!results.length) {
+        return null
+    }
+
     const navigation = useNavigation()
 
     return (
