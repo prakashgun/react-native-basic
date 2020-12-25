@@ -1,21 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { Text, View } from 'react-native'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import reducers from './src/reducers'
+import { Header } from './src/components/common'
+import LibraryList from './src/components/LibraryList'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <Provider store={createStore(reducers)}>
+      <View>
+        <Header headerText="Tech Stack" />
+        <LibraryList />
+      </View>
+    </Provider>
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
